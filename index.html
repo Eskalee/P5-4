@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Ввести Х" onclick="inputNumber()">
+<div id="result"></div>
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+
+    function inputNumber() {
+        var x1 = parseFloat(prompt('Введіть початок', ''));
+        var x2 = parseFloat(prompt('Введіть кінець', ''));
+        var n = parseFloat(prompt('Введіть крок', ''));
+        var x;
+        var f;
+        var results = '';
+
+        for (x = x1; x <= x2; x = x + n) {
+            if (!isNaN(x)) {
+                if (x < 0) {
+                    f = Math.pow(Math.tan(x), 3);
+                } else if (x === 0) {
+                    f = Math.pow(Math.PI, 3);
+                } else {
+                    f = Math.sqrt(x) - Math.log10(x);
+                }
+                results += 'Результат обчислення для x = ' + x + ': F = ' + f + '<br>';
+            }
+        }
+        document.getElementById('result').innerHTML = results;
+    }
+
+
+</SCRIPT>
+</body>
+</html>
